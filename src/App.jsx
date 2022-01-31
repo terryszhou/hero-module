@@ -153,11 +153,11 @@ export const App = () => {
       </section>
       <section className="snippy-hero-right">
         <div style={{ position: "relative", width: "100%" }}>
-          <svg viewBox={"0 0 83 440"} className="snippy-svg">
+          <svg viewBox={"0 0 100 100"} className="snippy-svg">
             <defs>
               <linearGradient id="sw-gradient" x1="0" x2="1" y1="1" y2="0">
-                <stop id="stop1" stop-color="rgba(248, 127, 155, 1)" offset="0%" />
-                <stop id="stop2" stop-color="rgba(251, 228, 31, 1)" offset="100%" />
+                <stop id="stop1" stop-color="rgba(248,127,155,1)" offset="0%" />
+                <stop id="stop2" stop-color="rgba(251,228,31,1)" offset="100%" />
               </linearGradient>
             </defs>
             <path
@@ -203,9 +203,11 @@ export const App = () => {
               content: `""`,
               height: "35%",
               width: "100%",
-              backgroundColor: "rgb(248,110,106)",
+              background: "linear-gradient(to right, rgba(248,127,155,1), rgba(251,228,31,1))",
               bottom: 0,
               zIndex: -1,
+              transform: "perspective(200px) rotateX(40deg)",
+              borderRadius: "8px",
             }}>
             Write once,
           </Heading>
@@ -262,7 +264,7 @@ export const App = () => {
           <Icon
             viewBox={"0 0 100 100"}
             position={"absolute"}
-            top={{base: "-18vw", lg: "-10vw"}}
+            top={{ base: "-18vw", lg: "-10vw" }}
             zIndex={"-1"}
             boxSize={{ base: "90vw", lg: "45vw" }}>
             <defs>
