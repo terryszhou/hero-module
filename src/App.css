@@ -179,15 +179,7 @@
     padding: 0rem 0rem 4rem 2rem;
   }
 
-  .snippy-header {
-    margin-top: 2rem;
-  }
-
-  .snippy-paragraph {
-    margin-top: 1.5rem;
-  }
-
-  .snippy-button-box {
+  .snippy-header, .snippy-paragraph, .snippy-button-box {
     margin-top: 1.5rem;
   }
 }

@@ -1,7 +1,17 @@
+import { Flex, Heading, Link, Text, Button, Stack, Icon, IconButton } from '@chakra-ui/react';
+import { createBreakpoints } from '@chakra-ui/theme-tools';
+import React from 'react';
+
+import { FaPlayCircle } from 'react-icons/fa';
+
 import './App.css';
 
-import { Flex, Box, Heading, Link, Text, Button, Stack, Icon } from '@chakra-ui/react';
-import { FaPlayCircle } from 'react-icons/fa';
+const breakpoints = createBreakpoints({
+  xs: "500px",
+  sm: "500px",
+  md: "500px",
+  lg: "992px",
+});
 
 export const App = () => {
   return (<>
@@ -69,11 +79,11 @@ export const App = () => {
     </Flex>
 
     <section className="hero snippy-hero">
-      <h1 style={{ position: "absolute", right: 0, top: 30 }}>Standard Implementation</h1>
+      <h1 style={{ position: "absolute", right: 10, top: 30 }}>Standard Implementation</h1>
       <section className="snippy-hero-left">
         <header className="snippy-header">
           <h1 className="snippy-header-top">Write once,</h1>
-          <h1 style={{ color: "rgb(228,110,106)" }}>use everywhere!</h1>
+          <h1 style={{ color: "rgb(248,110,106)" }}>use everywhere!</h1>
         </header>
         <p className="snippy-paragraph">Snippy is a rich coding snippets app that lets you create your own code snippets, categorize them, and even sync them in the cloud so you can use them anywhere. All that is free!</p>
         <div className="snippy-button-box">
@@ -103,20 +113,23 @@ export const App = () => {
       </section>
     </section>
 
-    <Flex h={"100vh"} position={"relative"}>
+    <Flex
+      h={"100vh"}
+      position={"relative"}
+      flexDirection={{ base: "column", lg: "row" }}>
       <Text
         position={"absolute"}
-        right={0}
+        right={10}
         top={30}>
         Chakra Implementation
       </Text>
       <Flex
-        w={"50%"}
+        w={{ base: "100%", lg: "50%" }}
         flexDirection={"column"}
-        p={"7.5rem 1rem 7.5rem 6rem"}>
-        <Stack>
+        p={{ base: "2rem", lg: "7.5rem 1rem 7.5rem 6rem" }}>
+        <Stack marginTop={{ base: "1.5rem" }}>
           <Heading
-            fontSize={"3.75rem"}
+            fontSize={{ base: "2rem", lg:"3.75rem" }}
             fontWeight={"bold"}
             fontFamily={"PT Sans Caption"}
             lineHeight={1}
@@ -127,33 +140,37 @@ export const App = () => {
               content: `""`,
               height: "35%",
               width: "100%",
-              backgroundColor: "rgb(228,110,106)",
+              backgroundColor: "rgb(248,110,106)",
               bottom: 0,
               zIndex: -1,
             }}>
             Write once,
           </Heading>
           <Heading
-            color={"rgb(228,110,106)"}
-            fontSize={"3.75rem"}
+            color={"rgb(248,110,106)"}
+            fontSize={{ base: "2rem", lg: "3.75rem" }}
             fontWeight={"bold"}
             fontFamily={"PT Sans Caption"}
             lineHeight={1}>
             use everywhere!
           </Heading>
         </Stack>
-        <Text color={"rgb(116,127,148)"} marginTop={"3rem"}>
+        <Text color={"rgb(116,127,148)"} marginTop={{md: "1.5rem", lg: "3rem"}}>
           Snippy is a rich coding snippets app that lets you create your own code snippets, categorize them, and even sync them in the cloud so you can use them anywhere. All that is free!
         </Text>
-        <Flex marginTop={"3rem"}>
+        <Flex
+          marginTop={{ base: "1.5rem", lg: "3rem" }}
+          flexDirection={{ base: "column", sm: "row" }}>
           <Button
             fontSize={18}
             fontWeight={"normal"}
             color={"white"}
-            p={".6rem 1.25rem"}
+            px={"1.25rem"}
             borderRadius={25}
+            bgColor={"rgb(248,110,106)"}
             marginRight={"1rem"}
-            bgColor={"rgb(228,110,106)"}
+            marginBottom={{ base: "1rem", sm: "inherit" }}
+            w={{ base: "100%", sm: "inherit" }}
             _hover={{ filter: "brightness(1.2)" }}>
             Get started
           </Button>
@@ -161,21 +178,21 @@ export const App = () => {
             fontSize={18}
             fontWeight={"normal"}
             color={"black"}
-            p={".6rem 1.25rem"}
+            px={"1.25rem"}
             borderRadius={25}
             bgColor={"rgb(238,242,247)"}
+            w={{ base: "100%", sm: "inherit" }}
             leftIcon={<FaPlayCircle color={"rgb(205,213,223)"} />}>
             How It Works
           </Button>
         </Flex>
       </Flex>
       <Flex
-        w={"50%"}
+        w={{ base: "100%", lg: "50%" }}
         flexDirection={"column"}
         alignItems={"center"}
-        padding={"15vh 5rem 0 .5rem"}
-        position={"relative"}
-      >
+        padding={{ base: "0rem 0rem 4rem 2rem", lg: "15vh 5rem 0 .5rem" }}
+        position={"relative"}>
         <Stack
           position={"relative"}
           width={"100%"}>
@@ -184,8 +201,8 @@ export const App = () => {
             position={"absolute"}
             top={"-7rem"}
             left={"2rem"}
-            z-index={"-1"}
-            boxSize={"40vw"}>
+            zIndex={"-1"}
+            boxSize={{ base: "80vw", lg: "40vw" }}>
             <path
               d={"M239.184 439.443c-55.13-5.419-110.241-21.365-151.074-58.767C42.307 338.722-7.478 282.729.938 221.217c8.433-61.644 78.896-91.048 126.871-130.712 34.337-28.388 70.198-51.348 112.004-66.78C282.34 8.024 325.382-3.369 370.518.904c54.019 5.115 112.774 10.886 150.881 49.482 39.916 40.427 49.421 100.753 53.385 157.402 4.13 59.015 11.255 128.44-30.444 170.44-41.383 41.683-111.6 19.106-169.213 30.663-46.68 9.364-88.56 35.21-135.943 30.551z"}
               fill={"rgb(253,245,245)"}
@@ -203,14 +220,18 @@ export const App = () => {
             top={"10px"}
             boxShadow={"xl"}
             justifyContent={"center"}
-            alignItems={"center"}
-          >
-
+            alignItems={"center"}>
+            <IconButton
+              as={"icon"}
+              icon={<FaPlayCircle />}
+              color={"white"}
+              fontSize={"3rem"}
+              borderRadius={"50%"}
+              bgColor={"transparent"}
+            />
           </Flex>
         </Stack>
-
       </Flex>
-
     </Flex>
   </>);
 };
