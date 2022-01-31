@@ -1,6 +1,6 @@
-import { Flex, Heading, Link, Text, Button, Stack, Icon, IconButton } from '@chakra-ui/react';
+import { Flex, Heading, Link, Text, Button, Stack, Icon, IconButton, VStack } from '@chakra-ui/react';
 import { createBreakpoints } from '@chakra-ui/theme-tools';
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 import { FaPlayCircle } from 'react-icons/fa';
 
@@ -14,9 +14,63 @@ const breakpoints = createBreakpoints({
 });
 
 export const App = () => {
-  return (<>
+  const refOne = useRef();
+  const refTwo = useRef();
+  const refThree = useRef();
+  const refFour = useRef();
+  const [scrolled, setScrolled] = useState();
 
-    <section className="hero hero-cliff">
+  const listenScrollEvent = () => {
+    if (window.scrollY >= 820) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    };
+  };
+
+  useEffect(() => {
+    listenScrollEvent();
+    window.addEventListener("scroll", listenScrollEvent)
+  }, []);
+
+  return (<>
+    <VStack
+      position={"fixed"}
+      bottom={5}
+      right={5}
+      zIndex={2}
+      opacity={0.7}>
+      <Button
+        w={"100%"}
+        bgColor={scrolled && "black"}
+        color={scrolled && "white"}
+        onClick={() => refOne.current.scrollIntoView({ behavior: "smooth" })}>
+        Standard Full
+      </Button>
+      <Button
+        w={"100%"}
+        bgColor={scrolled && "black"}
+        color={scrolled && "white"}
+        onClick={() => refTwo.current.scrollIntoView({ behavior: "smooth" })}>
+        Chakra Full
+      </Button>
+      <Button
+        w={"100%"}
+        bgColor={scrolled && "black"}
+        color={scrolled && "white"}
+        onClick={() => refThree.current.scrollIntoView({ behavior: "smooth" })}>
+        Standard Side
+      </Button>
+      <Button
+        w={"100%"}
+        bgColor={scrolled && "black"}
+        color={scrolled && "white"}
+        onClick={() => refFour.current.scrollIntoView({ behavior: "smooth" })}>
+        Chakra Side
+      </Button>
+    </VStack>
+
+    <section className="hero hero-cliff" ref={refOne}>
       <header className="header">
         <a className="logo" href="https://google.com">logo</a>
         <nav>Standard Implementation</nav>
@@ -29,6 +83,7 @@ export const App = () => {
     </section>
 
     <Flex
+      ref={refTwo}
       h={"100vh"}
       p={"1em"}
       boxSizing={"border-box"}
@@ -78,7 +133,7 @@ export const App = () => {
       </Flex>
     </Flex>
 
-    <section className="hero snippy-hero">
+    <section className="hero snippy-hero" ref={refThree}>
       <h1 style={{ position: "absolute", right: 10, top: 30 }}>Standard Implementation</h1>
       <section className="snippy-hero-left">
         <header className="snippy-header">
@@ -114,6 +169,7 @@ export const App = () => {
     </section>
 
     <Flex
+      ref={refFour}
       h={"100vh"}
       position={"relative"}
       flexDirection={{ base: "column", lg: "row" }}>
