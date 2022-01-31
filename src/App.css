@@ -135,8 +135,8 @@
 
 .snippy-svg {
   position: absolute;
-  width: 95%;
-  top: -3rem;
+  width: 80%;
+  top: -10vw;
   z-index: -1;
 }
 
@@ -181,6 +181,11 @@
 
   .snippy-header, .snippy-paragraph, .snippy-button-box {
     margin-top: 1.5rem;
+  }
+
+  .snippy-svg {
+    width: 70%;
+    top: -18vw;
   }
 }
 
