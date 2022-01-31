@@ -4,9 +4,12 @@
 
 .hero {
   display: flex;
+  height: 100vh;
+}
+
+.hero-cliff {
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
   padding: 1em;
   box-sizing: border-box;
   color: white;
@@ -41,9 +44,102 @@
   padding: .5em .67em;
   color: white;
   border: .1em solid white;
+  transition-duration: 0.2s;
+}
+
+.button:hover {
+  background-color: black;
+  color: white;
+  transition-duration: 0.2s;
 }
 
 .button-primary {
   color: black;
   background-color: white;
+}
+
+.snippy-hero-left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 7.5rem 6rem;
+}
+
+.snippy-header {
+  font-size: 3.75rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.snippy-header-top {
+  position: relative;
+}
+
+.snippy-header-top::before {
+  position: absolute;
+  content: "";
+  height: 35%;
+  width: 62%;
+  background-color: rgb(228,110,106);
+  bottom: 0;
+  z-index: -1;
+}
+
+.snippy-paragraph {
+  color: rgb(116,127,148);
+  margin-top: 3rem;
+}
+
+.snippy-button {
+  font-size: 18px;
+  padding: .6rem 1.25rem;
+  border-radius: 25px;
+  margin-right: .75rem;
+  display: flex;
+  align-items: center;
+}
+
+.snippy-button-primary {
+  background-color: rgb(228,110,106);
+  color: white;
+}
+
+.snippy-button-secondary {
+  background-color: rgb(238,242,247);
+  margin-left: .75rem;
+}
+
+.snippy-button-icon {
+  color: rgb(205,213,223);
+  margin-right: .5rem;
+}
+
+.snippy-hero-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7.5rem 5rem 0 .5rem;
+  position: relative;
+}
+
+.snippy-image {
+  background-image: url(https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 95%;
+  aspect-ratio: 2;
+  border-radius: 15px;
+  position: absolute;
+  top: 10px;
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.snippy-image-icon {
+  color: white;
+  font-size: 3rem;
 }
