@@ -68,14 +68,14 @@ export const App = () => {
       </Flex>
     </Flex>
 
-    <section className="hero">
+    <section className="hero snippy-hero">
       <section className="snippy-hero-left">
         <header className="snippy-header">
           <h1 className="snippy-header-top">Write once,</h1>
           <h1 style={{ color: "rgb(228,110,106)" }}>use everywhere!</h1>
         </header>
         <p className="snippy-paragraph">Snippy is a rich coding snippets app that lets you create your own code snippets, categorize them, and even sync them in the cloud so you can use them anywhere. All that is free!</p>
-        <div style={{ marginTop: "3rem", display: "flex" }}>
+        <div className="snippy-button-box">
           <button className="snippy-button snippy-button-primary">
             Get started
           </button>
@@ -93,6 +93,7 @@ export const App = () => {
               position: "absolute",
               width: "95%",
               top: "-3rem",
+              zIndex: "-1",
             }}>
             <path
               fillRule={"evenodd"}

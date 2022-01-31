@@ -62,7 +62,7 @@
   width: 50%;
   display: flex;
   flex-direction: column;
-  padding: 7.5rem 6rem;
+  padding: 7.5rem 1rem 7.5rem 6rem;
 }
 
 .snippy-header {
@@ -73,13 +73,14 @@
 
 .snippy-header-top {
   position: relative;
+  display: inline-block;
 }
 
 .snippy-header-top::before {
   position: absolute;
   content: "";
   height: 35%;
-  width: 62%;
+  width: 100%;
   background-color: rgb(228,110,106);
   bottom: 0;
   z-index: -1;
@@ -90,13 +91,19 @@
   margin-top: 3rem;
 }
 
+.snippy-button-box {
+  margin-top: 3rem;
+  display: flex;
+}
+
 .snippy-button {
   font-size: 18px;
   padding: .6rem 1.25rem;
   border-radius: 25px;
-  margin-right: .75rem;
+  margin-right: 1.5rem;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .snippy-button-primary {
@@ -106,7 +113,6 @@
 
 .snippy-button-secondary {
   background-color: rgb(238,242,247);
-  margin-left: .75rem;
 }
 
 .snippy-button-icon {
@@ -119,7 +125,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 7.5rem 5rem 0 .5rem;
+  padding: 15vh 5rem 0 .5rem;
   position: relative;
 }
 
@@ -129,7 +135,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   width: 95%;
-  aspect-ratio: 2;
+  height: 40vh;
   border-radius: 15px;
   position: absolute;
   top: 10px;
@@ -142,4 +148,33 @@
 .snippy-image-icon {
   color: white;
   font-size: 3rem;
+}
+
+@media screen and (max-width: 992px) {
+  .snippy-header {
+    font-size: 2.25rem;
+  }
+
+  .snippy-hero {
+    flex-direction: column;
+  }
+
+  .snippy-hero-left, .snippy-hero-right {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .snippy-hero-right {
+    padding: 0rem 0rem 4rem 2rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .snippy-button-box {
+    flex-direction: column;
+  }
+
+  .snippy-button-primary {
+    margin-bottom: 1rem;
+  }
 }
