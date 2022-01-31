@@ -58,6 +58,10 @@
   background-color: white;
 }
 
+.snippy-hero {
+  position: relative;
+}
+
 .snippy-hero-left {
   width: 50%;
   display: flex;
@@ -129,6 +133,13 @@
   position: relative;
 }
 
+.snippy-svg {
+  position: absolute;
+  width: 95%;
+  top: -3rem;
+  z-index: -1;
+}
+
 .snippy-image {
   background-image: url(https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=800&q=80);
   background-position: center;
@@ -166,6 +177,18 @@
 
   .snippy-hero-right {
     padding: 0rem 0rem 4rem 2rem;
+  }
+
+  .snippy-header {
+    margin-top: 2rem;
+  }
+
+  .snippy-paragraph {
+    margin-top: 1.5rem;
+  }
+
+  .snippy-button-box {
+    margin-top: 1.5rem;
   }
 }
 
