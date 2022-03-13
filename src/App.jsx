@@ -1,17 +1,9 @@
 import { Flex, Heading, Link, Text, Button, Box, Stack, Icon, IconButton, HStack, VStack } from '@chakra-ui/react';
-import { createBreakpoints } from '@chakra-ui/theme-tools';
 import React, { useRef, useState, useEffect } from 'react';
 
 import { FaPlayCircle } from 'react-icons/fa';
 
 import './App.css';
-
-const breakpoints = createBreakpoints({
-  xs: "500px",
-  sm: "500px",
-  md: "500px",
-  lg: "992px",
-});
 
 export const App = () => {
   const refOne = useRef();
